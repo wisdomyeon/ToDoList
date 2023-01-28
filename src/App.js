@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import Comon from './page/Comon';
-import Start from './page/Comon';
+import Welcome from './page/Welcome.jsx';
 
 function App() {
   return (
+
     <div className="App">
-      <Comon></Comon>
+      <Welcome></Welcome>
     </div>
+
   );
 }
 
