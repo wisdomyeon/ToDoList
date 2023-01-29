@@ -7,13 +7,15 @@ import Welcome from './page/Welcome';
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={<Welcome />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/todo" element={<MainToDo />}></Route>
-      </Routes>
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        <Routes>
+          <Route path='/' element={<Welcome />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/todo" element={<MainToDo />}></Route>
+        </Routes>
+      </div>
+    </RecoilRoot>
   );
 }
 

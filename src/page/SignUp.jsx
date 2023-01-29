@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from './../page/component/Input';
 import Button from './../page/component/Button';
+import { useRecoilState } from 'recoil';
 
 const SignUp = () => {
     const [userInfo, setUserInfo] = useState({ name: "", goal: "" });
@@ -10,10 +11,12 @@ const SignUp = () => {
         setUserInfo({ ...userInfo, [name]: value });
         console.log(userInfo);
     }
+
     const navigate = useNavigate();
     const nav = () => {
         navigate('/todo');
     }
+
     return (
         <div className='basic_modal'>
             <h1 className='title'>ToDoList</h1>
