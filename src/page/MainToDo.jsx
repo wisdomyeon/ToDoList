@@ -2,9 +2,8 @@ import React from 'react';
 
 const MainToDo = () => {
     return (
-        <div>
-
-        </div>
+        <div className='basic_modal2'>
+        </div >
     );
 };
 
