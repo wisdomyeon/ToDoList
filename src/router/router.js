@@ -5,12 +5,14 @@ import Root from "../pages/Root";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
 import Welcome from "../page/Welcome";
+import MainToDo from "../page/MainToDo";
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Welcome></Welcome>,
         children: [
             { path: "/signUp", element: <SignUp></SignUp> },
+            { path: "/todo", element: <MainToDo></MainToDo> },
         ],
     },
 ]);

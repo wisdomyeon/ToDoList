@@ -10,10 +10,10 @@ const SignUp = () => {
         setUserInfo({ ...userInfo, [name]: value });
         console.log(userInfo);
     }
-    // const navigate = useNavigate();
-    // const nav = () => {
-    //     navigate('/signup');
-    // }
+    const navigate = useNavigate();
+    const nav = () => {
+        navigate('/todo');
+    }
     return (
         <div className='basic_modal'>
             <h1 className='title'>ToDoList</h1>
@@ -22,7 +22,7 @@ const SignUp = () => {
                 <Input type="text" value={userInfo.name} name="name" assignInfo={assignInfo} text="이름을 입력해주세요" ></Input>
                 <Input type="text" value={userInfo.goal} name="goal" assignInfo={assignInfo} text="오늘의 다짐!!"></Input>
             </div>
-            <Button /*nav={nav}*/ text="Let's go"></Button>
+            <Button nav={nav} text="Let's go"></Button>
         </div >
     );
 };
