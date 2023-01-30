@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { UserInfoRecoil } from './../recoil/recoil';
 import Input from './../page/component/Input';
 import Button from './../page/component/Button';
-import { useRecoilState } from 'recoil';
 
 const SignUp = () => {
-    const [userInfo, setUserInfo] = useState({ name: "", goal: "" });
+    const [userInfo, setUserInfo] = useRecoilState(UserInfoRecoil);
+
     const assignInfo = (e) => {
         const { name, value } = e.target
         setUserInfo({ ...userInfo, [name]: value });
@@ -13,6 +15,7 @@ const SignUp = () => {
     }
 
     const navigate = useNavigate();
+
     const nav = () => {
         navigate('/todo');
     }
