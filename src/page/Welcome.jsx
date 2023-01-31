@@ -7,6 +7,7 @@ const Welcome = () => {
     const nav = () => {
         navigate('/signup');
     }
+
     return (
         <div className='basic_modal'>
             <h1 className='title'>ToDoList</h1>

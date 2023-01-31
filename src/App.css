@@ -86,6 +86,33 @@ button {
   margin-top: 20px;
 }
 
+.userInfoDiv {
+  width: inherit;
+  height: 80px;
+  background-color: rgb(161, 98, 16);
+}
+
+.userInfo {
+  float: left;
+  margin: 32px 5%;
+}
+
+.stateIconOuter {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  position: relative;
+  float: left;
+}
+
+.stateIconInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
