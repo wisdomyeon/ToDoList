@@ -113,6 +113,14 @@ button {
   transform: translate(-50%, -50%)
 }
 
+.stateModal {
+  height: 10%;
+  width: 50%;
+  display: block;
+  position: static;
+
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
