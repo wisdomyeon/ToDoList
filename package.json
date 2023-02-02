@@ -1,23 +1,5 @@
 {
   "name": "todolist",
-<<<<<<< HEAD
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wisdomyeon/TodoList.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wisdomyeon/TodoList/issues"
-  },
-  "homepage": "https://github.com/wisdomyeon/TodoList#readme"
-=======
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -56,5 +38,4 @@
       "last 1 safari version"
     ]
   }
->>>>>>> c67949e67d863647ce8b5fbc78aacf031f445e6b
 }
