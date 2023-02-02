@@ -9,7 +9,7 @@ const StateButton = ({ icon, index, iconInfo }) => {
     return (
         <>
             <div className='stateIconOuter' onClick={changeIcon}>
-                <span>
+                <span >
                     {icon}
                     {index}
                 </span>

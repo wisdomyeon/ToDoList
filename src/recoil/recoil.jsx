@@ -7,3 +7,12 @@ export const UserInfoRecoil = atom({
         goal: "",
     }
 });
+
+export const IconIndexRecoil = atom({
+    key: "IconIndexRecoil",
+    default: {
+        id: "",
+    },
+}
+
+)
