@@ -114,11 +114,20 @@ button {
 }
 
 .stateModal {
-  height: 10%;
-  width: 50%;
+  height: 80px;
+  width: 330px;
   display: block;
   position: static;
+  margin-left: 30px;
+}
 
+.stateModalList {
+  list-style: none;
+}
+
+.stateModalIcon {
+  margin: -6.5% 0 0 4%;
+  z-index: 80;
 }
 
 @media (prefers-reduced-motion: no-preference) {

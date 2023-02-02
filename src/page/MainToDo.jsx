@@ -6,7 +6,7 @@ import StateModal from './component/StateModal';
 
 const MainToDo = () => {
     const [userInfo, setUserInfo] = useRecoilState(UserInfoRecoil);
-    const [modal, setModal] = useState(true);
+    const [modal, setModal] = useState(false);
     const changeModal = () => {
         setModal(!modal)
     };
