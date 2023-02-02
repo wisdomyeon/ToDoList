@@ -1,11 +1,10 @@
 import { React, useState } from 'react';
 
-const StateButton = ({ changeModal, icon }) => {
+const StateButton = ({ icon }) => {
     return (
         <>
-            <div className='stateIconOuter' onClick={changeModal}>
-                {icon}
-                {/* <BsQuestionLg className='stateIconInner' onClick={console.log(index)}></BsQuestionLg> */}
+            <div className='stateIconOuter'>
+                <span>{icon}</span>
             </div >
         </>
     )

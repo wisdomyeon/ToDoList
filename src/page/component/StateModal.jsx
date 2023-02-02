@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import StateButton from './StateButton';
+import { useRecoilState } from 'recoil';
+import { StateIconsRecoil } from './../../recoil/recoil';
 import { AiFillHeart } from "react-icons/ai";
 import { BsFillCloudRainFill } from "react-icons/bs";
 import { FaFireAlt } from "react-icons/fa";
 import { GiPartyPopper, GiNightSleep } from "react-icons/gi";
-import StateButton from './StateButton';
 
 
 const StateModal = () => {
@@ -26,19 +28,19 @@ const StateModal = () => {
     {
         id: 4,
         icon: <GiNightSleep />
-    }
-    ])
+    }])
+
     return (
         <div >
             <img className="stateModal" src='StateModal.png'></img>
             {
                 icons.map((icon, index) => (
-                    <div className='stateModalIcon'>
-                        <StateButton key={icon.id} icon={icon.icon} />
+                    < div className='stateModalIcon' >
+                        <StateButton key={icon.id} icon={icon.icon} info={icons} />
                     </div>
                 ))
             }
-        </div>
+        </div >
     );
 };
 
