@@ -36,7 +36,7 @@ const StateModal = () => {
             {
                 icons.map((icon, index) => (
                     < div className='stateModalIcon' >
-                        <StateButton key={icon.id} icon={icon.icon} info={icons} />
+                        <StateButton icon={icon.icon} index={index} info={icons} />
                     </div>
                 ))
             }
