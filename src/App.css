@@ -92,18 +92,29 @@ button {
   background-color: rgb(161, 98, 16);
 }
 
-.userInfo {
-  float: left;
-  margin: 32px 5%;
+.userInfoName {
+  width: 30%;
+  height: inherit;
+  display: inline-block;
+  background-color: antiquewhite;
 }
 
-.stateIconOuter {
-  height: 60px;
-  width: 60px;
+.userInfoGoal {
+  width: 50%;
+  height: inherit;
+  display: inline-block;
+  background-color: darkmagenta;
+}
+
+.stateMainIcon {
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   background-color: #e0e0e0;
   position: relative;
   float: left;
+  left: 50px;
+  top: 5px;
 }
 
 .stateIconInner {
@@ -127,8 +138,40 @@ button {
 
 .stateModalIcon {
   margin: -6.5% 0 0 4%;
-  z-index: 80;
+  z-index: 20;
 }
+
+.list {
+  width: inherit;
+  height: 80px;
+  background-color: lightgreen;
+
+}
+
+.checkButton {
+  width: 20%;
+  height: inherit;
+  display: inline-block;
+  float: left;
+  background-color: coral;
+}
+
+.todoInput {
+  width: 60%;
+  height: inherit;
+  display: inline-block;
+  float: left;
+  background-color: cornflowerblue;
+}
+
+.delButton {
+  width: 20%;
+  height: inherit;
+  display: inline-block;
+  float: left;
+  background-color: rgb(234, 0, 255);
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

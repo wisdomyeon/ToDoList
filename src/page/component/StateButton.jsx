@@ -7,6 +7,9 @@ const StateButton = ({ icon, index, iconInfo }) => {
     //     setChange([...iconInfo], index)
     //     console.log(change)
     // }
+    const ab = () => {
+        <StateMain index={index} />
+    }
     return (
         <>
             <div className='stateIconOuter' onClick={() => { <StateMain index={index} /> }}>
