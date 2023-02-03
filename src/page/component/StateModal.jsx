@@ -2,33 +2,10 @@ import React, { useState } from 'react';
 import StateButton from './StateButton';
 import { useRecoilState } from 'recoil';
 import { StateIconsRecoil } from './../../recoil/recoil';
-import { AiFillHeart } from "react-icons/ai";
-import { BsFillCloudRainFill } from "react-icons/bs";
-import { FaFireAlt } from "react-icons/fa";
-import { GiPartyPopper, GiNightSleep } from "react-icons/gi";
-
+import StateIcon from './../../page/component/StateIcon.js';
 
 const StateModal = () => {
-    const [icons, setIcons] = useState([{
-        id: 0,
-        icon: <AiFillHeart />
-    },
-    {
-        id: 1,
-        icon: <BsFillCloudRainFill />
-    },
-    {
-        id: 2,
-        icon: <FaFireAlt />
-    },
-    {
-        id: 3,
-        icon: <GiPartyPopper />
-    },
-    {
-        id: 4,
-        icon: <GiNightSleep />
-    }])
+    const [icons, setIcons] = useState(StateIcon)
 
     return (
         <div >
@@ -36,7 +13,7 @@ const StateModal = () => {
             {
                 icons.map((icon, index) => (
                     < div className='stateModalIcon' >
-                        <StateButton icon={icon.icon} index={index} iconInfo={icons} />
+                        <StateButton icon={icon.icon} index={index} key={icon.id} />
                     </div>
                 ))
             }

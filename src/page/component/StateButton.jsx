@@ -1,14 +1,15 @@
 import { React, useState } from 'react';
+import StateMain from './StateMain';
 
 const StateButton = ({ icon, index, iconInfo }) => {
-    const [change, setChange] = useState(0);
-    const changeIcon = () => {
-        setChange([...iconInfo], index)
-        console.log(change)
-    }
+    // const [change, setChange] = useState(0);
+    // const changeIcon = () => {
+    //     setChange([...iconInfo], index)
+    //     console.log(change)
+    // }
     return (
         <>
-            <div className='stateIconOuter' onClick={changeIcon}>
+            <div className='stateIconOuter' onClick={() => { <StateMain index={index} /> }}>
                 <span >
                     {icon}
                     {index}

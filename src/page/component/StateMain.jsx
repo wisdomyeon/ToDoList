@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
 
 
-const StateMain = ({ changeModal }) => {
+const StateMain = ({ changeModal, index }) => {
     return (
         <>
-            <div className='stateIconOuter' onClick={changeModal}>
+            <div className='stateIconOuter' onClick={changeModal} onChange={index}>
+                {console.log(index)}
             </div >
         </>
     );
