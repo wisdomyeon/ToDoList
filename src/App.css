@@ -150,14 +150,6 @@ button {
   z-index: 80;
 }
 
-.stateIconInner {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  background-color: #e0e0e0;
-
-}
-
 .list {
   width: inherit;
   height: 80px;
@@ -191,10 +183,21 @@ button {
 
 .addBox {
   width: inherit;
-  height: 80px;
+  height: 35px;
   border-radius: 50px;
   border-style: dashed;
+  border-width: 3px;
   border-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addButton {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: gray;
 }
 
 
