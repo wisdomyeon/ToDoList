@@ -7,13 +7,10 @@ const StateButton = ({ icon, index, iconInfo }) => {
     //     setChange([...iconInfo], index)
     //     console.log(change)
     // }
-    const ab = () => {
-        <StateMain index={index} />
-    }
     return (
         <>
-            <div className='stateIconOuter' onClick={() => { <StateMain index={index} /> }}>
-                <span >
+            <div className='stateIconOuter' onClick={() => { }}>
+                <span>
                     {icon}
                     {index}
                 </span>
@@ -23,6 +20,3 @@ const StateButton = ({ icon, index, iconInfo }) => {
 };
 
 export default StateButton;
-
-//onclick하면 setIcon 해서 전환해주고
-//recoil로 전역관리해서 statemain에다가 recoil로 해주는거지

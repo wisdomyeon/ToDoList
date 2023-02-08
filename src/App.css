@@ -117,6 +117,15 @@ button {
   top: 5px;
 }
 
+.stateIconOuter {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  position: relative;
+  float: left;
+}
+
 .stateIconInner {
   position: absolute;
   top: 50%;
@@ -138,7 +147,15 @@ button {
 
 .stateModalIcon {
   margin: -6.5% 0 0 4%;
-  z-index: 20;
+  z-index: 80;
+}
+
+.stateIconInner {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+
 }
 
 .list {
@@ -170,6 +187,14 @@ button {
   display: inline-block;
   float: left;
   background-color: rgb(234, 0, 255);
+}
+
+.addBox {
+  width: inherit;
+  height: 80px;
+  border-radius: 50px;
+  border-style: dashed;
+  border-color: gray;
 }
 
 

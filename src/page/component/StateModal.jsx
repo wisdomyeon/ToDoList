@@ -2,25 +2,21 @@ import React, { useState } from 'react';
 import StateButton from './StateButton';
 import { useRecoilState } from 'recoil';
 import { StateIconsRecoil } from './../../recoil/recoil';
-import StateIcon from './../../page/component/StateIcon.js';
 
-const StateModal = () => {
-    const [icons, setIcons] = useState(StateIcon)
-
-    return (
-        <div >
-            <img className="stateModal" src='StateModal.png'></img>
-            {
-                icons.map((icon, index) => (
-                    < div className='stateModalIcon' >
-                        <StateButton icon={icon.icon} index={index} key={icon.id} />
-                    </div>
-                ))
-            }
-        </div >
-    );
+const StateModal = ({ icon }) => {
+  return (
+    <div >
+      <img className="stateModal" src='StateModal.png'></img>
+      {
+        icon.map((icon, index) => (
+          < div className='stateModalIcon' >
+            <StateButton icon={icon.icon} index={index} key={icon.id} />
+          </div>
+        ))
+      }
+    </div >
+  );
 };
-
 export default StateModal;
 
 

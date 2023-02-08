@@ -34,3 +34,5 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+//useEffect
