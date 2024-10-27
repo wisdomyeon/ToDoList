@@ -1,7 +1,9 @@
 const todoInput = document.querySelector("#todo-input");
 const todoButton = document.querySelector("#todo-btn");
 const todoList = document.querySelector(".todo-list")
-const todoDiv = document.createElement("div")
+const check = document.createTextNode("✅");
+//const emoji = document.createTextNode('▫️');
+//const deleteEmoji = document.createTextNode('❌');
 let newTodo = '';
 
 const onInput = (event) => { 
@@ -9,16 +11,17 @@ const onInput = (event) => {
 }
 
 const onButton = () => {
-    // 새로운 div 생성
-  const todoDiv = document.createElement("div");
-  todoDiv.textContent = newTodo;
-
-  // 새로운 div를 할 일 목록에 추가
-  todoList.append(todoDiv);
-
-  // 입력 필드 초기화
+  const newLi = document.createElement("li");
+  const checkSpan = document.createElement("span");
+  checkSpan.innerHTML = "⬜";
+  const newSpan = document.createElement("span");
+  newSpan.textContent = newTodo;
+  const delBtn = document.createElement("button");
+  delBtn.innerText = "❌";
+  newLi.append(checkSpan, newSpan, delBtn)
+  todoList.appendChild(newLi);
   todoInput.value = '';
-  newTodo = '';
+  console.log(todoList)
 }
 
 todoInput.addEventListener("input", onInput);
