@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "description": "간단한 일정 관리 토이 프로젝트",
   "main": "todolist.js",
-  "homepage": "https://github.com/wisdomyeon/ToDoList/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/todolist.js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "start": "node src/todolist.js"
   },
   "repository": {
     "type": "git",
