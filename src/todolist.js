@@ -25,7 +25,6 @@ const onButton = () => {
 const enterKey = (event) => { 
   if (event.code == 'Enter') {
     event.preventDefault();
-    console.log("엔터키 누름");
     onButton();
   }
 }
