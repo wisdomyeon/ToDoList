@@ -71,6 +71,7 @@ form{
   list-style: none;
   padding: 0;
   li{
+    display: inline;
     width: 50%;
     height: 32px;
     border-radius: 5px;
@@ -80,6 +81,10 @@ form{
     span{
       margin-right: 8px;
     }
+    .complete{
+      text-decoration: line-through;
+      color: rgb(155, 155, 155);
+    }
     button{
       border: 0;
       background-color: transparent;
@@ -88,6 +93,7 @@ form{
      }
   }
 }
+
 footer{
   display: flex;
   justify-content: center;
