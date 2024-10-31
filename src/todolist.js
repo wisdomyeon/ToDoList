@@ -19,8 +19,8 @@ const onButton = () => {
   newLi.append(checkSpan, newSpan, delBtn)
   todoList.appendChild(newLi);
   todoInput.value = '';
-  //checkSpan.addEventListener("click", checkBox)
-  checkSpan.addEventListener("click", () => { checkBox(event, newSpan)})
+  checkSpan.addEventListener("click", checkBox)
+  delBtn.addEventListener("click", deleteTodo)
 };
 
 const enterKey = (event) => { 
@@ -30,7 +30,7 @@ const enterKey = (event) => {
   }
 }
 
-/*const checkBox = (event) => {
+const checkBox = (event) => {
   const text = event.target.nextElementSibling;
   const check = event.target.getAttribute("checkTodo") === "true";
   if ( !check ) {
@@ -42,20 +42,13 @@ const enterKey = (event) => {
     text.classList.remove("complete");
     event.target.setAttribute("checkTodo", "false");
   }
-}*/
+}
 
-function checkBox(event, newSpan) { 
-  const text = newSpan;
-  const check = event.target.getAttribute("checkTodo") === "true";
-  if ( !check ) {
-    event.target.innerHTML = "✅";
-    text.classList.add("complete");
-    event.target.setAttribute("checkTodo", "true");
-  } else {
-    event.target.innerHTML = "⬜";
-    text.classList.remove("complete");
-    event.target.setAttribute("checkTodo", "false");
-  }
+const deleteTodo = (event) => { 
+  const btn = event.target;
+  const li = event.target.parentNode;
+  li.remove();
+  console.log(li)
 }
 
 todoInput.addEventListener("input", onInput);
