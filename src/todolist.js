@@ -13,17 +13,21 @@ const onButton = (storageData) => {
   const checkSpan = document.createElement("span");
   checkSpan.innerHTML = "⬜";
   checkSpan.setAttribute("checkTodo", "false");
-  const newSpan = document.createElement("span");
-  newSpan.textContent = newTodo;
+
+  const textSpan = document.createElement("span");
+  textSpan.textContent = newTodo;
   if (storageData) {
-    newSpan.textContent = storageData.contents
+    textSpan.textContent = storageData.contents
   }
+
   const delBtn = document.createElement("button");
   delBtn.innerText = "❌";
-  newLi.append(checkSpan, newSpan, delBtn)
+
+  newLi.append(checkSpan, textSpan, delBtn)
   todoList.appendChild(newLi);
   todoInput.value = '';
-  saveTodo(newLi);
+
+  saveTodo(textSpan);
   checkSpan.addEventListener("click", checkBox)
   delBtn.addEventListener("click", deleteTodo)
 };
@@ -55,8 +59,9 @@ const deleteTodo = (event) => {
   li.remove();
 }
 
-const saveTodo = (li) => { 
-  const extractedText = li.childNodes[1].textContent;
+const saveTodo = (textSpan) => { 
+  const extractedText = textSpan.textContent;
+  console.log(extractedText);
   const todoObj = {
     contents: extractedText,
   }
