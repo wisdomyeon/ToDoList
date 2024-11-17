@@ -18,14 +18,9 @@ const onButton = (storageData) => {
 
   const checkSpan = document.createElement("span");
   checkSpan.innerHTML = "⬜";
-  checkSpan.setAttribute("checkTodo", "false");
-
+  
   const textSpan = document.createElement("span");
   textSpan.textContent = newTodo;
-  if (storageData) {
-    console.log(storageData)
-    textSpan.textContent = storageData.contents
-  }
 
   const delBtn = document.createElement("button");
   delBtn.innerText = "❌";
@@ -37,10 +32,23 @@ const onButton = (storageData) => {
   checkSpan.addEventListener("click", checkBox)
   delBtn.addEventListener("click", deleteTodo)
 
+  if (storageData) {
+    textSpan.textContent = storageData.contents;
+    if (storageData.complete === true) {
+      checkSpan.innerHTML = "✅";
+      checkSpan.classList.add("check"); 
+      textSpan.classList.add("complete");
+    } else {
+      checkSpan.innerHTML = "⬜";
+      checkSpan.classList.remove("check"); 
+      textSpan.classList.remove("complete");
+    }
+  }
+
   const todoObj = {
     id: newId,
     contents: textSpan.textContent,
-    completet: checkSpan.classList.contains("complete"),
+    complete: checkSpan.classList.contains("check"),
   }
   saveText.push(todoObj);
   saveTodo();
@@ -54,18 +62,31 @@ const enterKey = (event) => {
 }
 
 const checkBox = (event) => {
+  const box = event.target;
   const text = event.target.nextElementSibling;
-  const check = event.target.getAttribute("checkTodo") === "true";
-  if ( !check ) {
-    event.target.innerHTML = "✅";
-    text.classList.add("complete");
-    event.target.setAttribute("checkTodo", "true");
-    saveTodo();
+  const li = event.target.parentNode;
+  const check = box.classList.contains("check");
+
+  if (!check) {
+    saveText.forEach((todo, i) => {
+      event.target.innerHTML = "✅";
+      box.classList.add("check");
+      text.classList.add("complete");
+      if (todo.id == li.id) {
+        todo.complete = true;
+        saveTodo();
+      }
+    })
   } else {
-    event.target.innerHTML = "⬜";
-    text.classList.remove("complete");
-    event.target.setAttribute("checkTodo", "false");
-    saveTodo();
+    saveText.forEach((todo, i) => {
+      event.target.innerHTML = "⬜";
+      box.classList.remove("check");
+      text.classList.remove("complete");
+      if (todo.id == li.id) {
+        todo.complete = false;
+        saveTodo();
+      }
+    })
   }
 }
 
@@ -86,10 +107,10 @@ const saveTodo = () => {
 }
 
 const savedTodoList = JSON.parse(localStorage.getItem('savedTodo'));
-if (savedTodoList) { 
-  for (let i = 0; i < savedTodoList.length; i++){
-    onButton(savedTodoList[i])
-  }
+if (savedTodoList) {
+  savedTodoList.forEach((todo, i) => { 
+    onButton(todo);
+  })
 }
 
 todoInput.addEventListener("input", onInput);
