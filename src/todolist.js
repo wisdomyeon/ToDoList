@@ -20,7 +20,7 @@ const onButton = (storageData) => {
   checkSpan.innerHTML = "⬜";
   
   const textSpan = document.createElement("span");
-  textSpan.textContent = newTodo;
+  textSpan.textContent = storageData ? storageData.contents : newTodo;
 
   const delBtn = document.createElement("button");
   delBtn.innerText = "❌";
@@ -33,7 +33,7 @@ const onButton = (storageData) => {
   delBtn.addEventListener("click", deleteTodo)
 
   if (storageData) {
-    textSpan.textContent = storageData.contents;
+    //textSpan.textContent = storageData.contents;
     if (storageData.complete === true) {
       checkSpan.innerHTML = "✅";
       checkSpan.classList.add("check"); 
@@ -114,4 +114,4 @@ if (savedTodoList) {
 }
 
 todoInput.addEventListener("input", onInput);
-todoButton.addEventListener("click", onButton);
+todoButton.addEventListener("click", () => {onButton()});
