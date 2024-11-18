@@ -33,7 +33,6 @@ const onButton = (storageData) => {
   delBtn.addEventListener("click", deleteTodo)
 
   if (storageData) {
-    //textSpan.textContent = storageData.contents;
     if (storageData.complete === true) {
       checkSpan.innerHTML = "✅";
       checkSpan.classList.add("check"); 
